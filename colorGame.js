@@ -5,23 +5,19 @@ var h1 = document.querySelector("h1");
 var pickedColor = pickColor();
 var message = document.querySelector("#message");
 var resetBtn = document.querySelector("#reset");
+var easy = document.querySelector("#easy");
 
 document.getElementById('rgbDisplay').textContent = pickedColor;
 
-resetBtn.addEventListener("click", function() {
-  // generate new random colors
-  colors = generateRandomColors(12);
-  // allocate colors on squares
-  for (var i = 0; i < num; i++) {
-    squares[i].style.background = colors[i];
+easy.addEventListener("click", function() {
+  for (var i = 4; i < num; i++) {
+    squares[i].style.background = "#333";
   }
-  // reset pickedColor
-  pickedColor = pickColor();
-  // reset rgbDisplay
-  document.getElementById('rgbDisplay').textContent = pickedColor;
+  reset(4);
+});
 
-  this.textContent = "New Color";
-  h1.style.background = "#333";
+resetBtn.addEventListener("click", function() {
+  reset(num);
 });
 
 
@@ -31,7 +27,7 @@ for (var i = 0; i < num; i++) {
   // square listens "click" and calls in function
   squares[i].addEventListener("click", function() {
     if (this.style.background === pickedColor) {
-      winning(pickedColor);
+      winning(pickedColor, num);
       h1.style.background = pickedColor;
       message.textContent = "Correct!";
       resetBtn.textContent = "Play Again";
@@ -43,14 +39,14 @@ for (var i = 0; i < num; i++) {
   });
 }
 
-function winning(color) {
-  for (var i = 0; i < squares.length; i++) {
+function winning(color, number) {
+  for (var i = 0; i < number; i++) {
     squares[i].style.background = color;
   }
 }
 
-function pickColor() {
-  var random = Math.floor(Math.random() * num);
+function pickColor(number) {
+  var random = Math.floor(Math.random() * number);
   return colors[random];
 }
 
@@ -71,4 +67,20 @@ function randomColor() {
   var g = Math.floor(Math.random() * 256);
   var b = Math.floor(Math.random() * 256);
   return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+
+function reset(number) {
+  // generate new random colors
+  colors = generateRandomColors(12);
+  // allocate colors on squares
+  for (var i = 0; i < number; i++) {
+    squares[i].style.background = colors[i];
+  }
+  // reset pickedColor
+  pickedColor = pickColor(number);
+  // reset rgbDisplay
+  document.getElementById('rgbDisplay').textContent = pickedColor;
+
+  this.textContent = "New Color";
+  h1.style.background = "#333";
 }
