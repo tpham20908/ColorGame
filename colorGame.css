@@ -1,0 +1,38 @@
+body {
+  background-color: #333;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+#platform {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.square {
+  background-color: orange;
+  width: 23%;
+  padding-top: 23%;
+  float: left;
+  margin: 1%;
+}
+
+nav {
+  height: 30px;
+  text-align: center;
+  background-color: white;
+  color: black;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+#difficulty {
+  float: right;
+}
+
+#reset {
+  float: left;
+}
