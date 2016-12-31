@@ -19,6 +19,7 @@ easy.addEventListener("click", function() {
   reset(num);
 });
 
+<<<<<<< HEAD
 medium.addEventListener("click", function() {
   num = 8;
   medium.classList.add("difficultySelected");
@@ -37,6 +38,14 @@ hard.addEventListener("click", function() {
 
 resetBtn.addEventListener("click", function() {
   reset(num);
+||||||| merged common ancestors
+  this.textContent = "New Color";
+  h1.style.background = "#333";
+=======
+  this.textContent = "New Color";
+  h1.style.background = "#333";
+  message.textContent = "";
+>>>>>>> master
 });
 
 
