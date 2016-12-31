@@ -38,7 +38,7 @@ hard.addEventListener("click", function() {
 resetBtn.addEventListener("click", function() {
   reset(num);
   this.textContent = "New Color";
-  h1.style.background = "#333";
+  h1.style.background = "steelblue";
   message.textContent = "";
 });
 

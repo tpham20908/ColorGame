@@ -1,10 +1,22 @@
 body {
   background-color: #333;
+  margin: 0;
+  font-family: "Avenir";
 }
 
 h1 {
+  margin: 0;
   color: white;
   text-align: center;
+  background-color: steelblue;
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1.1;
+  padding: 20px 0;
+}
+
+#rgbDisplay {
+  font-size: 200%;
 }
 
 #platform {
