@@ -36,3 +36,7 @@ nav {
 #reset {
   float: left;
 }
+
+.difficultySelected {
+  background-color: blue;
+}

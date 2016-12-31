@@ -6,14 +6,33 @@ var pickedColor = pickColor();
 var message = document.querySelector("#message");
 var resetBtn = document.querySelector("#reset");
 var easy = document.querySelector("#easy");
+var medium = document.querySelector("#medium");
+var hard = document.querySelector("#hard");
 
 document.getElementById('rgbDisplay').textContent = pickedColor;
 
 easy.addEventListener("click", function() {
-  for (var i = 4; i < num; i++) {
-    squares[i].style.background = "#333";
-  }
-  reset(4);
+  num = 4;
+  easy.classList.add("difficultySelected");
+  medium.classList.remove("difficultySelected");
+  hard.classList.remove("difficultySelected");
+  reset(num);
+});
+
+medium.addEventListener("click", function() {
+  num = 8;
+  medium.classList.add("difficultySelected");
+  easy.classList.remove("difficultySelected");
+  hard.classList.remove("difficultySelected");
+  reset(num);
+});
+
+hard.addEventListener("click", function() {
+  num = 12;
+  hard.classList.add("difficultySelected");
+  medium.classList.remove("difficultySelected");
+  easy.classList.remove("difficultySelected");
+  reset(num);
 });
 
 resetBtn.addEventListener("click", function() {
@@ -71,13 +90,18 @@ function randomColor() {
 
 function reset(number) {
   // generate new random colors
-  colors = generateRandomColors(12);
-  // allocate colors on squares
-  for (var i = 0; i < number; i++) {
+  colors = generateRandomColors(number);
+
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].style.display = "block";
     squares[i].style.background = colors[i];
+    if (!colors[i]) {
+      squares[i].style.display = "none";
+    }
   }
-  // reset pickedColor
+
   pickedColor = pickColor(number);
+
   // reset rgbDisplay
   document.getElementById('rgbDisplay').textContent = pickedColor;
 
