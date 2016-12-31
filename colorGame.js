@@ -109,5 +109,5 @@ function reset(number) {
   document.getElementById('rgbDisplay').textContent = pickedColor;
 
   this.textContent = "New Color";
-  h1.style.background = "#333";
+  h1.style.background = "steelblue";
 }
