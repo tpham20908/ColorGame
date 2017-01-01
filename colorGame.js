@@ -39,7 +39,6 @@ resetBtn.addEventListener("click", function() {
   reset(num);
   this.textContent = "New Color";
   h1.style.background = "steelblue";
-  message.textContent = "";
 });
 
 
@@ -51,7 +50,7 @@ for (var i = 0; i < num; i++) {
     if (this.style.background === pickedColor) {
       winning(pickedColor, num);
       h1.style.background = pickedColor;
-      message.textContent = "Correct!";
+      message.textContent = "Correct!!!";
       resetBtn.textContent = "Play Again";
     }
     else {
@@ -110,4 +109,5 @@ function reset(number) {
 
   this.textContent = "New Color";
   h1.style.background = "steelblue";
+  message.textContent = "";
 }

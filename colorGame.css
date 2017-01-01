@@ -12,16 +12,16 @@ h1 {
   text-transform: uppercase;
   font-weight: normal;
   line-height: 1.1;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 #rgbDisplay {
-  font-size: 200%;
+  font-size: 175%;
 }
 
 #platform {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .square {
@@ -30,6 +30,37 @@ h1 {
   padding-top: 23%;
   float: left;
   margin: 1%;
+  border-radius: 10%;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+  -moz-transition: background .3s;
+}
+
+button, section {
+  display: inline-block;
+  border: none;
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  height: 100%;
+  color: steelblue;
+  letter-spacing: 1px;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+}
+
+button:hover, .difficultySelected {
+  background-color: steelblue;
+  color: white;
+}
+
+#message {
+  display: inline-block;
+  width: 20%;
+  font-size: 22px;
 }
 
 nav {
@@ -37,18 +68,4 @@ nav {
   text-align: center;
   background-color: white;
   color: black;
-  padding-left: 15%;
-  padding-right: 15%;
-}
-
-#difficulty {
-  float: right;
-}
-
-#reset {
-  float: left;
-}
-
-.difficultySelected {
-  background-color: blue;
 }
